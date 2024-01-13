@@ -1,24 +1,11 @@
-class SudokuSolver {
+export default class SudokuSolver {
+	validate(puzzleString) {}
 
-  validate(puzzleString) {
-  }
+	checkRowPlacement(puzzleString, row, column, value) {}
 
-  checkRowPlacement(puzzleString, row, column, value) {
+	checkColPlacement(puzzleString, row, column, value) {}
 
-  }
+	checkRegionPlacement(puzzleString, row, column, value) {}
 
-  checkColPlacement(puzzleString, row, column, value) {
-
-  }
-
-  checkRegionPlacement(puzzleString, row, column, value) {
-
-  }
-
-  solve(puzzleString) {
-    
-  }
+	solve(puzzleString) {}
 }
-
-module.exports = SudokuSolver;
-

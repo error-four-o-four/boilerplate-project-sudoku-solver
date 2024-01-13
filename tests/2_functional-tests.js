@@ -1,11 +1,9 @@
-const chai = require("chai");
-const chaiHttp = require('chai-http');
+import * as chai from 'chai';
+import chaiHttp from 'chai-http';
+import server from '../server.js';
+
 const assert = chai.assert;
-const server = require('../server');
 
 chai.use(chaiHttp);
 
-suite('Functional Tests', () => {
-
-});
-
+suite('Functional Tests', () => {});

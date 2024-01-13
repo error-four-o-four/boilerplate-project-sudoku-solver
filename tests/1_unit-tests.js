@@ -1,9 +1,6 @@
-const chai = require('chai');
-const assert = chai.assert;
+import { assert } from 'chai';
+import Solver from '../controllers/sudoku-solver.js';
 
-const Solver = require('../controllers/sudoku-solver.js');
 let solver;
 
-suite('Unit Tests', () => {
-
-});
+suite('Unit Tests', () => {});
