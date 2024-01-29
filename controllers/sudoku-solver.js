@@ -65,6 +65,10 @@ export default class SudokuSolver {
 		}
 	}
 
+	getCell(coord) {
+		return this.cells.get(`${coord[0].toUpperCase()}${parseInt(coord[1], 10)}`);
+	}
+
 	getCellsInRow(coord) {
 		const cells = [];
 		const row = coord[0].toUpperCase();
@@ -151,6 +155,11 @@ export default class SudokuSolver {
 	check(coord, cell, char) {
 		const values = this.getCells(coord, cell).map((cell) => cell.value);
 		return !values.includes(char);
+	}
+
+	checkValue(coord, char) {
+		const cell = this.getCell(coord);
+		return cell.hasValue() && cell.value === char;
 	}
 
 	checkCells() {

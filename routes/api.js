@@ -19,6 +19,11 @@ export default function (app) {
 		}
 
 		const solver = new Solver(puzzle);
+
+		if (solver.checkValue(coordinate, value)) {
+			return res.json({ valid: true });
+		}
+
 		const conflict = [];
 
 		if (!solver.checkRowPlacement(coordinate, value)) {
@@ -45,6 +50,11 @@ export default function (app) {
 
 	app.route('/api/solve').post((req, res) => {
 		const { puzzle } = req.body;
+
+		if (!puzzle) {
+			return res.json({ error: 'Required field missing' });
+		}
+
 		const error = Solver.validatePuzzle(puzzle);
 
 		if (error) {
@@ -58,6 +68,6 @@ export default function (app) {
 			return res.json({ error: 'Puzzle cannot be solved' });
 		}
 
-		return res.json(solver);
+		return res.json({ solution });
 	});
 }
